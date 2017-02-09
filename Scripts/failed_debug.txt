@@ -1,0 +1,1 @@
+for i in `heat resource-list -n5 overcloud | grep "CREATE_FAILED" | awk {' print $4'} | grep -v "|"`; do heat deployment-output-show $i --all >> failed.txt;done
